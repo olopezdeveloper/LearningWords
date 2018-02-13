@@ -21,6 +21,8 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var buttonNext: UIButton!
     @IBOutlet weak var buttonAgain: UIButton!
     
+    @IBOutlet weak var sharePlayButton: UIBarButtonItem!
+    
     var current_word = ""
     var current_level = 1
     var current_siri = 0
@@ -145,4 +147,19 @@ class PlayViewController: UIViewController {
         }
         reproducir(message: current_word)
     }
+    
+    @IBAction func share(_ sender: Any) {
+        //compartir la imagen
+        var items = [Any]()
+        //validando que exista la imagen
+        if let image = UIImage(named: current_word){
+            items.append(image)
+        }
+        items.append("#\(current_word) Aprendiendo ingles con #LearningWords #olopezdeveloper")
+        
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        present(activityController, animated: true, completion: nil)
+    }
+    
 }
