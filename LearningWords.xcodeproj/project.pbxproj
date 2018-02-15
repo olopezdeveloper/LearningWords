@@ -11,12 +11,12 @@
 		836E16A82030988E00AD25EE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 836E16A72030988E00AD25EE /* libsqlite3.0.tbd */; };
 		836E16B62030A8F200AD25EE /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E16B52030A8F200AD25EE /* RecordCell.swift */; };
 		836E16B82030B00E00AD25EE /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E16B72030B00E00AD25EE /* PlayViewController.swift */; };
-		836E16BA2030BC5400AD25EE /* lwords.db in Resources */ = {isa = PBXBuildFile; fileRef = 836E16B92030BC5400AD25EE /* lwords.db */; };
 		83BC4BD4202FA5850088B018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC4BD3202FA5850088B018 /* AppDelegate.swift */; };
 		83BC4BD6202FA5850088B018 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BC4BD5202FA5850088B018 /* ViewController.swift */; };
 		83BC4BD9202FA5850088B018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BD7202FA5850088B018 /* Main.storyboard */; };
 		83BC4BDB202FA5850088B018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BDA202FA5850088B018 /* Assets.xcassets */; };
 		83BC4BDE202FA5850088B018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BDC202FA5850088B018 /* LaunchScreen.storyboard */; };
+		83C2CAE820361FC600F079D4 /* lwords.db in Resources */ = {isa = PBXBuildFile; fileRef = 83C2CAE720361FC600F079D4 /* lwords.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,6 @@
 		836E16A72030988E00AD25EE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		836E16B52030A8F200AD25EE /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		836E16B72030B00E00AD25EE /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
-		836E16B92030BC5400AD25EE /* lwords.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = lwords.db; sourceTree = SOURCE_ROOT; };
 		83BC4BD0202FA5850088B018 /* LearningWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BC4BD3202FA5850088B018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83BC4BD5202FA5850088B018 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		83BC4BDA202FA5850088B018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BC4BDD202FA5850088B018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83BC4BDF202FA5850088B018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C2CAE720361FC600F079D4 /* lwords.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = lwords.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +87,9 @@
 			children = (
 				836E16A920309A6200AD25EE /* Controllers */,
 				836E16B52030A8F200AD25EE /* RecordCell.swift */,
+				83C2CAE720361FC600F079D4 /* lwords.db */,
 				836E16A32030947800AD25EE /* DataBase.h */,
 				836E16A42030947800AD25EE /* DataBase.m */,
-				836E16B92030BC5400AD25EE /* lwords.db */,
 				83BC4BD3202FA5850088B018 /* AppDelegate.swift */,
 				83BC4BD7202FA5850088B018 /* Main.storyboard */,
 				83BC4BDA202FA5850088B018 /* Assets.xcassets */,
@@ -160,7 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				836E16BA2030BC5400AD25EE /* lwords.db in Resources */,
+				83C2CAE820361FC600F079D4 /* lwords.db in Resources */,
 				83BC4BDE202FA5850088B018 /* LaunchScreen.storyboard in Resources */,
 				83BC4BDB202FA5850088B018 /* Assets.xcassets in Resources */,
 				83BC4BD9202FA5850088B018 /* Main.storyboard in Resources */,
