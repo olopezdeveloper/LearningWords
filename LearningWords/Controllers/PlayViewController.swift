@@ -47,6 +47,7 @@ class PlayViewController: UIViewController {
         buttonAway.isHidden = true
         buttonAgain.isHidden = true
         buttonSend.isEnabled = true
+        buttonSend.backgroundColor = UIColor.green
         fieldWord.text = ""
         hasSiriHelped = false
         current_word = randonWord
@@ -118,6 +119,7 @@ class PlayViewController: UIViewController {
         let wordField = fieldWord.text
         
         buttonSend.isEnabled = false
+        buttonSend.backgroundColor = UIColor.gray
         let response = checkWord(word: wordField)
         if (response){
             showGreat()

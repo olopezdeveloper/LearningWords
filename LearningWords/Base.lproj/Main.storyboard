@@ -249,7 +249,7 @@
                                             <action selector="runAway:" destination="9hW-8P-gDq" eventType="touchUpInside" id="RDh-Nu-Ujx"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pc-Q8-5Ln">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pc-Q8-5Ln">
                                         <rect key="frame" x="8" y="555" width="359" height="30"/>
                                         <color key="tintColor" red="1" green="0.86332216265799033" blue="0.85962807163298538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
