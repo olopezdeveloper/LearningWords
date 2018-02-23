@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830C9DEA203F00D100AC922C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C9DE9203F00D100AC922C /* TableViewController.swift */; };
 		836E16A52030947800AD25EE /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E16A42030947800AD25EE /* DataBase.m */; };
 		836E16A82030988E00AD25EE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 836E16A72030988E00AD25EE /* libsqlite3.0.tbd */; };
 		836E16B62030A8F200AD25EE /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836E16B52030A8F200AD25EE /* RecordCell.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		830C9DE9203F00D100AC922C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		836E16A22030947700AD25EE /* LearningWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningWords-Bridging-Header.h"; sourceTree = "<group>"; };
 		836E16A32030947800AD25EE /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
 		836E16A42030947800AD25EE /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				83BC4BD5202FA5850088B018 /* ViewController.swift */,
 				836E16B72030B00E00AD25EE /* PlayViewController.swift */,
+				830C9DE9203F00D100AC922C /* TableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BC4BD6202FA5850088B018 /* ViewController.swift in Sources */,
+				830C9DEA203F00D100AC922C /* TableViewController.swift in Sources */,
 				836E16B82030B00E00AD25EE /* PlayViewController.swift in Sources */,
 				83BC4BD4202FA5850088B018 /* AppDelegate.swift in Sources */,
 				836E16B62030A8F200AD25EE /* RecordCell.swift in Sources */,

@@ -137,10 +137,6 @@ class PlayViewController: UIViewController {
         cargarJuego()
     }
     
-    @IBAction func runAway(_ sender: Any) {
-        performSegue(withIdentifier: "retornoListaRecords", sender: nil)
-        //dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func siriHelp(_ sender: Any) {
         if hasSiriHelped == false {

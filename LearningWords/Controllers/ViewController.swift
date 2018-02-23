@@ -8,11 +8,10 @@
 
 import UIKit
 
-
-let kLevel = "record_level"
-let kDate = "record_date"
-let kHour = "record_hour"
-let kSiriHelp = "siri_help"
+//let kLevel = "record_level"
+//let kDate = "record_date"
+//let kHour = "record_hour"
+//let kSiriHelp = "siri_help"
 
 class ViewController: UIViewController {
     @IBOutlet weak var talbeView: UITableView!
@@ -25,6 +24,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         cargarRegistros()
+        
+        navigationItem.rightBarButtonItem = editButtonItem
     }
 
     func cargarRegistros(){
