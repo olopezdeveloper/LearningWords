@@ -63,6 +63,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         let siri = record[kSiriHelp]
         let fecha = record[kDate]
         let hour = record[kHour]
+        let _ = record[kId]
         
         cell.configurarCelda(fecha: fecha, hora: hour, level: level, siri: siri)
         return cell

@@ -27,6 +27,7 @@ class PlayViewController: UIViewController {
     var current_level = 1
     var current_siri = 0
     var hasSiriHelped = false
+    var arrayWord = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +66,11 @@ class PlayViewController: UIViewController {
     }
     // traer palabra ramdon
     func getRandomWord() -> String{
-        
-        if let registros = DataBase.shared().ejecutarSelect("select * from words ORDER BY RANDOM() limit 1") as? [[String:String]]{
+        var filterWord = ""
+        if arrayWord.isEmpty == false {
+            filterWord = arrayWord.joined(separator: "','")
+        }
+        if let registros = DataBase.shared().ejecutarSelect("select * from words where text not in ('\(filterWord)') ORDER BY RANDOM() limit 1") as? [[String:String]]{
             let arrayRecords = registros
             if let randonWord = arrayRecords[0]["text"]{
                 return randonWord
@@ -122,13 +126,18 @@ class PlayViewController: UIViewController {
         buttonSend.backgroundColor = UIColor.gray
         let response = checkWord(word: wordField)
         if (response){
-            showGreat()
+            if arrayWord.count >= CORRECT_WORD_TO_WIN{
+                performSegue(withIdentifier: "victory", sender: nil)
+            }else{
+                showGreat()
+            }
         }else{
             showBad()
         }
     }
     
     @IBAction func nextWord(_ sender: Any) {
+        arrayWord.append(current_word)
         cargarJuego()
     }
     @IBAction func tryAgain(_ sender: Any) {

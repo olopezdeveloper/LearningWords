@@ -8,11 +8,6 @@
 
 import UIKit
 
-let kLevel = "record_level"
-let kDate = "record_date"
-let kHour = "record_hour"
-let kSiriHelp = "siri_help"
-
 class TableViewController: UITableViewController {
     var arrayRecords = [[String:String]]()
     
@@ -28,7 +23,9 @@ class TableViewController: UITableViewController {
             arrayRecords = registros
             self.tableView.reloadData()
         }
-        
+    }
+    func borrarRegistros(pk:String){
+        DataBase.shared().ejecutarSelect("delete from records where id = \(pk)")
     }
 
 
@@ -53,7 +50,6 @@ class TableViewController: UITableViewController {
         let siri = record[kSiriHelp]
         let fecha = record[kDate]
         let hour = record[kHour]
-        
         cell.configurarCelda(fecha: fecha, hora: hour, level: level, siri: siri)
         return cell
     }
@@ -61,5 +57,19 @@ class TableViewController: UITableViewController {
     // Definir altura de la celda
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            // send to delete sql
+            let record = arrayRecords[indexPath.row]
+            if let pk = record[kId]{
+                borrarRegistros(pk: pk)
+            }
+            
+            arrayRecords.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
     }
 }

@@ -13,8 +13,8 @@ class RecordCell: UITableViewCell {
     @IBOutlet weak var horaLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var siriLabel: UILabel!
-    
-    func configurarCelda(fecha:String?, hora:String?, level:String?, siri:String?){
+
+    func configurarCelda(fecha:String?, hora:String?, level:String?, siri:String?  ){
         fechaLabel.text = fecha
         horaLabel.text = hora
         levelLabel.text = level
