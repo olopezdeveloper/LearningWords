@@ -126,7 +126,7 @@ class PlayViewController: UIViewController {
         buttonSend.backgroundColor = UIColor.gray
         let response = checkWord(word: wordField)
         if (response){
-            if arrayWord.count >= CORRECT_WORD_TO_WIN{
+            if current_level > CORRECT_WORD_TO_WIN{
                 performSegue(withIdentifier: "victory", sender: nil)
             }else{
                 showGreat()
@@ -143,6 +143,7 @@ class PlayViewController: UIViewController {
     @IBAction func tryAgain(_ sender: Any) {
         current_level = 1
         current_siri = 0
+        arrayWord = [String]()
         cargarJuego()
     }
     
