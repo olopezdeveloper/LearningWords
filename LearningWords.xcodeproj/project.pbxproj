@@ -19,6 +19,8 @@
 		83BC4BD9202FA5850088B018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BD7202FA5850088B018 /* Main.storyboard */; };
 		83BC4BDB202FA5850088B018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BDA202FA5850088B018 /* Assets.xcassets */; };
 		83BC4BDE202FA5850088B018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BDC202FA5850088B018 /* LaunchScreen.storyboard */; };
+		83D8E6E32051BBFB00A84D9B /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */; };
+		83D8E6E52051BCDC00A84D9B /* toolsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8E6E42051BCDC00A84D9B /* toolsGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		83BC4BDA202FA5850088B018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BC4BDD202FA5850088B018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83BC4BDF202FA5850088B018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		83D8E6E42051BCDC00A84D9B /* toolsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolsGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,9 @@
 			children = (
 				83A2EA0020448D3B009B8389 /* Cells */,
 				83BC4BD5202FA5850088B018 /* ViewController.swift */,
-				836E16B72030B00E00AD25EE /* PlayViewController.swift */,
 				830C9DE9203F00D100AC922C /* TableViewController.swift */,
+				836E16B72030B00E00AD25EE /* PlayViewController.swift */,
+				83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -75,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				83A2E9FE20448C6D009B8389 /* Constants.swift */,
+				83D8E6E42051BCDC00A84D9B /* toolsGame.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 				830C9DEA203F00D100AC922C /* TableViewController.swift in Sources */,
 				836E16B82030B00E00AD25EE /* PlayViewController.swift in Sources */,
 				83BC4BD4202FA5850088B018 /* AppDelegate.swift in Sources */,
+				83D8E6E52051BCDC00A84D9B /* toolsGame.swift in Sources */,
+				83D8E6E32051BBFB00A84D9B /* GameOverViewController.swift in Sources */,
 				83A2E9FF20448C6D009B8389 /* Constants.swift in Sources */,
 				836E16B62030A8F200AD25EE /* RecordCell.swift in Sources */,
 				836E16A52030947800AD25EE /* DataBase.m in Sources */,

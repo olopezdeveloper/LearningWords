@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class PlayViewController: UIViewController {
     @IBOutlet weak var labelLevel: UILabel!
@@ -20,6 +19,8 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var buttonAway: UIButton!
     @IBOutlet weak var buttonNext: UIButton!
     @IBOutlet weak var buttonAgain: UIButton!
+    @IBOutlet weak var buttonShare: UIButton!
+    
     
     @IBOutlet weak var sharePlayButton: UIBarButtonItem!
     
@@ -35,6 +36,7 @@ class PlayViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         cargarJuego()
+        reproducir(message: "")
     }
     
     // iniciador de juego
@@ -46,8 +48,10 @@ class PlayViewController: UIViewController {
         labelBad.isHidden = true
         buttonNext.isHidden = true
         buttonAway.isHidden = true
+        buttonShare.isHidden = true
         buttonAgain.isHidden = true
         buttonSend.isEnabled = true
+        buttonSend.isHidden = false
         buttonSend.backgroundColor = UIColor.green
         fieldWord.text = ""
         hasSiriHelped = false
@@ -63,6 +67,8 @@ class PlayViewController: UIViewController {
         labelBad.isHidden = false
         buttonAgain.isHidden = false
         buttonAway.isHidden = false
+        buttonShare.isHidden = false
+        buttonNext.isHidden = true
     }
     // traer palabra ramdon
     func getRandomWord() -> String{
@@ -81,7 +87,6 @@ class PlayViewController: UIViewController {
     // checkear si palabra ingresada es correcta
     func checkWord(word:String?) -> Bool {
         if current_word.lowercased() == word?.lowercased() {
-            current_level += 1
             return true
         }else{
             saveRecord()
@@ -103,21 +108,6 @@ class PlayViewController: UIViewController {
         DataBase.shared().ejecutarInsert(insertSQL)
         
     }
-    // Reproducir palabra
-    func reproducir(message:String?) {
-        guard let message = message else {
-            return
-        }
-        let synthesizer   = AVSpeechSynthesizer()
-        //synthesizer.delegate = self
-        let utterance = AVSpeechUtterance(string: message)
-        //utterance.voice = AVSpeechSynthesisVoice(language: "es-PE")
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        utterance.volume = 1
-        utterance.rate = 0.4
-        synthesizer.speak(utterance)
-    }
-    
     
     @IBAction func sendWord(_ sender: Any) {
         let wordField = fieldWord.text
@@ -130,6 +120,7 @@ class PlayViewController: UIViewController {
                 performSegue(withIdentifier: "victory", sender: nil)
             }else{
                 showGreat()
+                current_level += 1
             }
         }else{
             showBad()
@@ -155,19 +146,18 @@ class PlayViewController: UIViewController {
         }
         reproducir(message: current_word)
     }
-    
-    @IBAction func share(_ sender: Any) {
-        //compartir la imagen
-        var items = [Any]()
-        //validando que exista la imagen
-        if let image = UIImage(named: current_word){
-            items.append(image)
-        }
-        items.append("#\(current_word) Aprendiendo ingles con #LearningWords #olopezdeveloper")
+    @IBAction func shareLose(_ sender: Any) {
+        let message = "#\(current_word) Lvl \(current_level) Aprendiendo ingles con #LearningWords #olopezdeveloper"
         
-        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        let activityController = socialShare(withMessage: message, withImage: current_word)
         
         present(activityController, animated: true, completion: nil)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let victory = segue.destination as? GameOverViewController {
+            victory.current_level = current_level
+        }
+    }
 }
