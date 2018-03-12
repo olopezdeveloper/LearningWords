@@ -14,6 +14,7 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var fieldWord: UITextField!
     @IBOutlet weak var labelGreat: UILabel!
     @IBOutlet weak var labelBad: UILabel!
+    @IBOutlet weak var labelSiriHelp: UILabel!
     
     @IBOutlet weak var buttonSend: UIButton!
     @IBOutlet weak var buttonAway: UIButton!
@@ -29,6 +30,7 @@ class PlayViewController: UIViewController {
     var current_siri = 0
     var hasSiriHelped = false
     var arrayWord = [String]()
+    var siriHelp = SIRI_HELP
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ class PlayViewController: UIViewController {
         imageWord.image = UIImage(named: randonWord)
         labelGreat.isHidden = true
         labelBad.isHidden = true
+        labelSiriHelp.text = String(SIRI_HELP)
         buttonNext.isHidden = true
         buttonAway.isHidden = true
         buttonShare.isHidden = true
@@ -55,6 +58,7 @@ class PlayViewController: UIViewController {
         buttonSend.backgroundColor = UIColor.green
         fieldWord.text = ""
         hasSiriHelped = false
+        siriHelp = SIRI_HELP
         current_word = randonWord
     }
     // respuesta correcta
@@ -144,7 +148,13 @@ class PlayViewController: UIViewController {
             current_siri += 1
             hasSiriHelped = true
         }
-        reproducir(message: current_word)
+        if siriHelp > 0 {
+            reproducir(message: current_word)
+            siriHelp -= 1
+            labelSiriHelp.text = String(siriHelp)
+            
+        }
+        
     }
     @IBAction func shareLose(_ sender: Any) {
         let message = "#\(current_word) Lvl \(current_level) Aprendiendo ingles con #LearningWords #olopezdeveloper"

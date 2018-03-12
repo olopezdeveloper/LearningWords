@@ -14,3 +14,4 @@ let kHour = "record_hour"
 let kSiriHelp = "siri_help"
 let kId = "id"
 let CORRECT_WORD_TO_WIN = 3
+let SIRI_HELP = 3
