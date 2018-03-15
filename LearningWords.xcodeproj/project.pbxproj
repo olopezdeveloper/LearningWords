@@ -21,9 +21,11 @@
 		83BC4BDE202FA5850088B018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BDC202FA5850088B018 /* LaunchScreen.storyboard */; };
 		83D8E6E32051BBFB00A84D9B /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */; };
 		83D8E6E52051BCDC00A84D9B /* toolsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8E6E42051BCDC00A84D9B /* toolsGame.swift */; };
+		96F0B6912D19A201A36C63B5 /* Pods_LearningWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AE504B8B7659327DAB4260 /* Pods_LearningWords.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64AE504B8B7659327DAB4260 /* Pods_LearningWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearningWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830C9DE9203F00D100AC922C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		836E16A22030947700AD25EE /* LearningWords-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearningWords-Bridging-Header.h"; sourceTree = "<group>"; };
 		836E16A32030947800AD25EE /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		83BC4BDF202FA5850088B018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		83D8E6E42051BCDC00A84D9B /* toolsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolsGame.swift; sourceTree = "<group>"; };
+		889EDBF9DAE6B03BAD6933B2 /* Pods-LearningWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningWords/Pods-LearningWords.release.xcconfig"; sourceTree = "<group>"; };
+		F1C8DE4F2E105E42ECF28A1C /* Pods-LearningWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningWords.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearningWords/Pods-LearningWords.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,16 +54,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				836E16A82030988E00AD25EE /* libsqlite3.0.tbd in Frameworks */,
+				96F0B6912D19A201A36C63B5 /* Pods_LearningWords.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A76104C356A0E4C6F4A0E16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1C8DE4F2E105E42ECF28A1C /* Pods-LearningWords.debug.xcconfig */,
+				889EDBF9DAE6B03BAD6933B2 /* Pods-LearningWords.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		836E16A62030988E00AD25EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				836E16A72030988E00AD25EE /* libsqlite3.0.tbd */,
+				64AE504B8B7659327DAB4260 /* Pods_LearningWords.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +124,7 @@
 				83BC4BD2202FA5850088B018 /* LearningWords */,
 				83BC4BD1202FA5850088B018 /* Products */,
 				836E16A62030988E00AD25EE /* Frameworks */,
+				4A76104C356A0E4C6F4A0E16 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83BC4BE2202FA5850088B018 /* Build configuration list for PBXNativeTarget "LearningWords" */;
 			buildPhases = (
+				42409903485F56AC15423390 /* [CP] Check Pods Manifest.lock */,
 				83BC4BCC202FA5850088B018 /* Sources */,
 				83BC4BCD202FA5850088B018 /* Frameworks */,
 				83BC4BCE202FA5850088B018 /* Resources */,
+				409C72D7AE475F5B96A4D974 /* [CP] Embed Pods Frameworks */,
+				B1EBA17D93CD933BFE8671DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +223,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		409C72D7AE475F5B96A4D974 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LearningWords/Pods-LearningWords-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearningWords/Pods-LearningWords-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42409903485F56AC15423390 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearningWords-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1EBA17D93CD933BFE8671DB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearningWords/Pods-LearningWords-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83BC4BCC202FA5850088B018 /* Sources */ = {
@@ -353,6 +426,7 @@
 		};
 		83BC4BE3202FA5850088B018 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1C8DE4F2E105E42ECF28A1C /* Pods-LearningWords.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -370,6 +444,7 @@
 		};
 		83BC4BE4202FA5850088B018 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 889EDBF9DAE6B03BAD6933B2 /* Pods-LearningWords.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
