@@ -8,15 +8,10 @@
 
 import UIKit
 
-//let kLevel = "record_level"
-//let kDate = "record_date"
-//let kHour = "record_hour"
-//let kSiriHelp = "siri_help"
-
 class ViewController: UIViewController {
-    @IBOutlet weak var talbeView: UITableView!
+    @IBOutlet private weak var talbeView: UITableView!
     
-    var arrayRecords = [[String:String]]()
+    private var arrayRecords = [[String:String]]()
     
     
     override func viewDidLoad() {
@@ -28,7 +23,7 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = editButtonItem
     }
 
-    func cargarRegistros(){
+    private func cargarRegistros(){
         if let registros = DataBase.shared().ejecutarSelect("select * from records order by \(kLevel) desc, \(kSiriHelp) asc limit 10") as? [[String:String]]{
             arrayRecords = registros
             talbeView.reloadData()
@@ -36,7 +31,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func retornoListaRecords(segue:UIStoryboardSegue) {
+    @IBAction private func retornoListaRecords(segue:UIStoryboardSegue) {
         if let _ = segue.source as? PlayViewController {
             cargarRegistros()
         }

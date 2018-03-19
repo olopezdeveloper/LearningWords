@@ -13,7 +13,7 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    @IBAction func shareVictory(_ sender: Any) {
+    @IBAction private func shareVictory(_ sender: Any) {
         let message = "#LearningWords Lvl \(current_level) I'm a Winner! Aprendiendo ingles con #olopezdeveloper"
         
         let activityController = socialShare(withMessage: message, withImage: nil)

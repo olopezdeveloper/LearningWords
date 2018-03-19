@@ -9,40 +9,41 @@
 import UIKit
 
 class PlayViewController: UIViewController {
-    @IBOutlet weak var labelLevel: UILabel!
-    @IBOutlet weak var imageWord: UIImageView!
-    @IBOutlet weak var fieldWord: UITextField!
-    @IBOutlet weak var labelGreat: UILabel!
-    @IBOutlet weak var labelBad: UILabel!
-    @IBOutlet weak var labelSiriHelp: UILabel!
+    //MARK:- IBOutlet Game Play
+    @IBOutlet private weak var labelLevel: UILabel!
+    @IBOutlet private weak var imageWord: UIImageView!
+    @IBOutlet private weak var fieldWord: UITextField!
+    @IBOutlet private weak var labelGreat: UILabel!
+    @IBOutlet private weak var labelBad: UILabel!
+    @IBOutlet private weak var labelSiriHelp: UILabel!
     
-    @IBOutlet weak var buttonSend: UIButton!
-    @IBOutlet weak var buttonAway: UIButton!
-    @IBOutlet weak var buttonNext: UIButton!
-    @IBOutlet weak var buttonAgain: UIButton!
-    @IBOutlet weak var buttonShare: UIButton!
+    @IBOutlet private weak var buttonSend: UIButton!
+    @IBOutlet private weak var buttonAway: UIButton!
+    @IBOutlet private weak var buttonNext: UIButton!
+    @IBOutlet private weak var buttonAgain: UIButton!
+    @IBOutlet private weak var buttonShare: UIButton!
     
+    @IBOutlet private weak var sharePlayButton: UIBarButtonItem!
     
-    @IBOutlet weak var sharePlayButton: UIBarButtonItem!
-    
-    var current_word = ""
+    //MARK:- Variables del Juego
+    //Convertir en Objeto en Version 1.01
     var current_level = 1
-    var current_siri = 0
-    var hasSiriHelped = false
-    var arrayWord = [String]()
-    var siriHelp = SIRI_HELP
+    private var current_word = ""
+    private var current_siri = 0
+    private var hasSiriHelped = false
+    private var arrayWord = [String]()
+    private var siriHelp = SIRI_HELP
     
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
+        //Carga la vista por primera vez
         cargarJuego()
-        reproducir(message: "")
     }
     
+    //MARK:- Private Functions Game Play
     // iniciador de juego
-    func cargarJuego(){
+    private func cargarJuego(){
         labelLevel.text = String(current_level)
         let randonWord = getRandomWord()
         imageWord.image = UIImage(named: randonWord)
@@ -62,12 +63,12 @@ class PlayViewController: UIViewController {
         current_word = randonWord
     }
     // respuesta correcta
-    func showGreat() {
+    private func showGreat() {
         labelGreat.isHidden = false
         buttonNext.isHidden = false
     }
     // respuesta equivocada
-    func showBad() {
+    private func showBad() {
         labelBad.isHidden = false
         buttonAgain.isHidden = false
         buttonAway.isHidden = false
@@ -75,7 +76,7 @@ class PlayViewController: UIViewController {
         buttonNext.isHidden = true
     }
     // traer palabra ramdon
-    func getRandomWord() -> String{
+    private func getRandomWord() -> String{
         var filterWord = ""
         if arrayWord.isEmpty == false {
             filterWord = arrayWord.joined(separator: "','")
@@ -89,7 +90,7 @@ class PlayViewController: UIViewController {
         return ""
     }
     // checkear si palabra ingresada es correcta
-    func checkWord(word:String?) -> Bool {
+    private func checkWord(word:String?) -> Bool {
         if current_word.lowercased() == word?.lowercased() {
             return true
         }else{
@@ -97,8 +98,8 @@ class PlayViewController: UIViewController {
             return false
         }
     }
-    // Guardar Record de la partida
-    func saveRecord(){
+    // Guardar Record de la partida SQLite
+    private func saveRecord(){
         let date = Date()
         let formatter = DateFormatter()
         let formatterHour = DateFormatter()
@@ -113,7 +114,8 @@ class PlayViewController: UIViewController {
         
     }
     
-    @IBAction func sendWord(_ sender: Any) {
+    //MARK:- IBAction Events
+    @IBAction private func sendWord(_ sender: Any) {
         let wordField = fieldWord.text
         
         buttonSend.isEnabled = false
@@ -131,19 +133,19 @@ class PlayViewController: UIViewController {
         }
     }
     
-    @IBAction func nextWord(_ sender: Any) {
+    @IBAction private func nextWord(_ sender: Any) {
         arrayWord.append(current_word)
         cargarJuego()
     }
-    @IBAction func tryAgain(_ sender: Any) {
+    
+    @IBAction private func tryAgain(_ sender: Any) {
         current_level = 1
         current_siri = 0
         arrayWord = [String]()
         cargarJuego()
     }
     
-    
-    @IBAction func siriHelp(_ sender: Any) {
+    @IBAction private func siriHelp(_ sender: Any) {
         if hasSiriHelped == false {
             current_siri += 1
             hasSiriHelped = true
@@ -156,7 +158,8 @@ class PlayViewController: UIViewController {
         }
         
     }
-    @IBAction func shareLose(_ sender: Any) {
+    
+    @IBAction private func shareLose(_ sender: Any) {
         let message = "#\(current_word) Lvl \(current_level) Aprendiendo ingles con #LearningWords #olopezdeveloper"
         
         let activityController = socialShare(withMessage: message, withImage: current_word)
@@ -164,7 +167,7 @@ class PlayViewController: UIViewController {
         present(activityController, animated: true, completion: nil)
     }
     
-    
+    //MARK:- Segue Game Over Victory
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let victory = segue.destination as? GameOverViewController {
             victory.current_level = current_level

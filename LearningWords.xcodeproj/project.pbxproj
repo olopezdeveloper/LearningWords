@@ -82,11 +82,9 @@
 		836E16A920309A6200AD25EE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				83A2EA0020448D3B009B8389 /* Cells */,
+				83D1A22A205FF30500E2D86B /* Record */,
+				83D1A229205FF2DA00E2D86B /* Play */,
 				83BC4BD5202FA5850088B018 /* ViewController.swift */,
-				830C9DE9203F00D100AC922C /* TableViewController.swift */,
-				836E16B72030B00E00AD25EE /* PlayViewController.swift */,
-				83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +148,24 @@
 				836E16A22030947700AD25EE /* LearningWords-Bridging-Header.h */,
 			);
 			path = LearningWords;
+			sourceTree = "<group>";
+		};
+		83D1A229205FF2DA00E2D86B /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				836E16B72030B00E00AD25EE /* PlayViewController.swift */,
+				83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		83D1A22A205FF30500E2D86B /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				83A2EA0020448D3B009B8389 /* Cells */,
+				830C9DE9203F00D100AC922C /* TableViewController.swift */,
+			);
+			path = Record;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
