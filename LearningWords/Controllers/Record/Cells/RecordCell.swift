@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol RecordCellDelegate:NSObjectProtocol {
+    func llamarSiri(text:String)
+}
+
 class RecordCell: UITableViewCell {
     @IBOutlet weak var fechaLabel: UILabel!
     @IBOutlet weak var horaLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var siriLabel: UILabel!
-
+    
+    weak var delegate:RecordCellDelegate?
+    
     func configurarCelda(fecha:String?, hora:String?, level:String?, siri:String?  ){
         fechaLabel.text = fecha
         horaLabel.text = hora
@@ -21,4 +27,8 @@ class RecordCell: UITableViewCell {
         siriLabel.text = siri
     }
 
+    @IBAction func callProtocolSiri(_ sender: Any) {
+        let text = "Level \(levelLabel.text ?? "")"
+        delegate?.llamarSiri(text: text)
+    }
 }

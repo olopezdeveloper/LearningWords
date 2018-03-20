@@ -45,7 +45,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let record = arrayRecords[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell", for: indexPath) as! RecordCell
-        
+        cell.delegate = self
         let level = record[kLevel]
         let siri = record[kSiriHelp]
         let fecha = record[kDate]
@@ -59,6 +59,7 @@ class TableViewController: UITableViewController {
         return 120
     }
     
+    // Delete Record
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             // send to delete sql
@@ -66,10 +67,16 @@ class TableViewController: UITableViewController {
             if let pk = record[kId]{
                 borrarRegistros(pk: pk)
             }
-            
             arrayRecords.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         }
+    }
+    
+}
+
+extension TableViewController:RecordCellDelegate {
+    func llamarSiri(text: String) {
+        reproducir(message: text)
     }
 }
