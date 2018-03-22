@@ -19,6 +19,8 @@
 		83BC4BD9202FA5850088B018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BD7202FA5850088B018 /* Main.storyboard */; };
 		83BC4BDB202FA5850088B018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BDA202FA5850088B018 /* Assets.xcassets */; };
 		83BC4BDE202FA5850088B018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83BC4BDC202FA5850088B018 /* LaunchScreen.storyboard */; };
+		83CA1A1B2062990F008200CB /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA1A1A2062990F008200CB /* iOSDevCenters+GIF.swift */; };
+		83CA1A1D20629A6F008200CB /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 83CA1A1C20629A6E008200CB /* loading.gif */; };
 		83D8E6E32051BBFB00A84D9B /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */; };
 		83D8E6E52051BCDC00A84D9B /* toolsGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8E6E42051BCDC00A84D9B /* toolsGame.swift */; };
 		96F0B6912D19A201A36C63B5 /* Pods_LearningWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AE504B8B7659327DAB4260 /* Pods_LearningWords.framework */; };
@@ -42,6 +44,8 @@
 		83BC4BDA202FA5850088B018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83BC4BDD202FA5850088B018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83BC4BDF202FA5850088B018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83CA1A1A2062990F008200CB /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
+		83CA1A1C20629A6E008200CB /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		83D8E6E22051BBFB00A84D9B /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		83D8E6E42051BCDC00A84D9B /* toolsGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolsGame.swift; sourceTree = "<group>"; };
 		889EDBF9DAE6B03BAD6933B2 /* Pods-LearningWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearningWords.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearningWords/Pods-LearningWords.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 			children = (
 				83A2E9FE20448C6D009B8389 /* Constants.swift */,
 				83D8E6E42051BCDC00A84D9B /* toolsGame.swift */,
+				83CA1A1A2062990F008200CB /* iOSDevCenters+GIF.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 				83BC4BDA202FA5850088B018 /* Assets.xcassets */,
 				83BC4BDC202FA5850088B018 /* LaunchScreen.storyboard */,
 				83BC4BDF202FA5850088B018 /* Info.plist */,
+				83CA1A1C20629A6E008200CB /* loading.gif */,
 				836E16A22030947700AD25EE /* LearningWords-Bridging-Header.h */,
 			);
 			path = LearningWords;
@@ -233,6 +239,7 @@
 			files = (
 				837CE8292044423300696308 /* lwords.db in Resources */,
 				83BC4BDE202FA5850088B018 /* LaunchScreen.storyboard in Resources */,
+				83CA1A1D20629A6F008200CB /* loading.gif in Resources */,
 				83BC4BDB202FA5850088B018 /* Assets.xcassets in Resources */,
 				83BC4BD9202FA5850088B018 /* Main.storyboard in Resources */,
 			);
@@ -300,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BC4BD6202FA5850088B018 /* ViewController.swift in Sources */,
+				83CA1A1B2062990F008200CB /* iOSDevCenters+GIF.swift in Sources */,
 				830C9DEA203F00D100AC922C /* TableViewController.swift in Sources */,
 				836E16B82030B00E00AD25EE /* PlayViewController.swift in Sources */,
 				83BC4BD4202FA5850088B018 /* AppDelegate.swift in Sources */,

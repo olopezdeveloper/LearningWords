@@ -34,11 +34,17 @@ class PlayViewController: UIViewController {
     private var arrayWord = [String]()
     private var siriHelp = SIRI_HELP
     
+    private var imageView = UIImageView()
+    
     //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         //Carga la vista por primera vez
         cargarJuego()
+        
+        let jeremyGif = UIImage.gifImageWithName("loading")
+        imageView = UIImageView(image: jeremyGif)
+        
     }
     
     //MARK:- Private Functions Game Play
@@ -113,6 +119,10 @@ class PlayViewController: UIViewController {
         DataBase.shared().ejecutarInsert(insertSQL)
         
     }
+    // Remover loading
+    private func removeLoading() {
+        imageView.removeFromSuperview()
+    }
     
     //MARK:- IBAction Events
     @IBAction private func sendWord(_ sender: Any) {
@@ -151,14 +161,25 @@ class PlayViewController: UIViewController {
             hasSiriHelped = true
         }
         if siriHelp > 0 {
-            reproducir(message: current_word)
+            
+            
+            imageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 150.0)
+            view.addSubview(imageView)
+            
+            DispatchQueue.global(qos: .background).async { [weak self] in
+                reproducir(message: self?.current_word, end: {
+                    DispatchQueue.main.async {
+                        self?.removeLoading()
+                    }
+                })
+            }
+                
             siriHelp -= 1
             labelSiriHelp.text = String(siriHelp)
             
         }
         
     }
-    
     @IBAction private func shareLose(_ sender: Any) {
         let message = "#\(current_word) Lvl \(current_level) Aprendiendo ingles con #LearningWords #olopezdeveloper"
         

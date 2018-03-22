@@ -30,7 +30,7 @@ func socialShare(withMessage message:String, withImage image:String?) -> UIActiv
 }
 
 // Reproducir palabra
-func reproducir(message:String?) {
+func reproducir(message:String?, end:(()->())?) {
     guard let message = message else {
         return
     }
@@ -40,6 +40,8 @@ func reproducir(message:String?) {
     //utterance.voice = AVSpeechSynthesisVoice(language: "es-PE")
     utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
     utterance.volume = 1
-    utterance.rate = 0.4
+    //utterance.rate = 0.4
+    end?()
     synthesizer.speak(utterance)
+    
 }

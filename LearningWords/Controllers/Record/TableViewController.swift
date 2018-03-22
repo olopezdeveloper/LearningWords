@@ -77,6 +77,6 @@ class TableViewController: UITableViewController {
 
 extension TableViewController:RecordCellDelegate {
     func llamarSiri(text: String) {
-        reproducir(message: text)
+        reproducir(message: text, end: nil)
     }
 }

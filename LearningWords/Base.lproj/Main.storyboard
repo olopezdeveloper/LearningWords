@@ -248,7 +248,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDr-kY-N5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="KpY-G1-Hq2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-546.39999999999998" y="-121.88905547226388"/>
+            <point key="canvasLocation" x="-547.5" y="-122.53521126760563"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="ioi-RZ-zIF">
