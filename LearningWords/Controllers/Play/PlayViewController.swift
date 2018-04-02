@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PlayViewController: UIViewController {
+import IQKeyboardManagerSwift
+
+class PlayViewController: UIViewController, UITextFieldDelegate {
     //MARK:- IBOutlet Game Play
     @IBOutlet private weak var labelLevel: UILabel!
     @IBOutlet private weak var imageWord: UIImageView!
@@ -45,6 +47,7 @@ class PlayViewController: UIViewController {
         let jeremyGif = UIImage.gifImageWithName("loading")
         imageView = UIImageView(image: jeremyGif)
         
+        fieldWord.delegate = self
     }
     
     //MARK:- Private Functions Game Play
@@ -194,4 +197,10 @@ class PlayViewController: UIViewController {
             victory.current_level = current_level
         }
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("seee")
+    }
 }
+
+
