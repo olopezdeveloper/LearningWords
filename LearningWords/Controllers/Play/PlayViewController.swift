@@ -10,7 +10,7 @@ import UIKit
 
 import IQKeyboardManagerSwift
 
-class PlayViewController: UIViewController, UITextFieldDelegate {
+class PlayViewController: UIViewController {
     //MARK:- IBOutlet Game Play
     @IBOutlet private weak var labelLevel: UILabel!
     @IBOutlet private weak var imageWord: UIImageView!
@@ -128,7 +128,7 @@ class PlayViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK:- IBAction Events
-    @IBAction private func sendWord(_ sender: Any) {
+    @IBAction private func sendWord() {
         let wordField = fieldWord.text
         
         buttonSend.isEnabled = false
@@ -198,9 +198,12 @@ class PlayViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        print("seee")
-    }
 }
 
+extension PlayViewController:UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        sendWord()
+    }
+}
 
